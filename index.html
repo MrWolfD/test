@@ -80,6 +80,10 @@
             display: inline-block;
             animation: ticker 30s linear infinite;
         }
+        .hero-image-mask {
+            mask-image: linear-gradient(to left, black 50%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to left, black 50%, transparent 100%);
+        }
         @keyframes ticker {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -92,7 +96,7 @@
     <div id="spotlight" class="spotlight"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass py-4 px-6 md:px-12 flex justify-between items-center">
+    <nav class="fixed top-0 left-0 right-0 z-50 glass py-4 px-4 md:px-8 lg:px-12 flex justify-between items-center">
         <div class="font-display text-xl tracking-widest text-accent">ЕГОР КОШЕЛЕВ</div>
 
         <!-- Desktop Menu -->
@@ -131,32 +135,44 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex flex-col justify-center px-4 md:px-12 pt-20 overflow-hidden max-w-[100vw]">
-        <div class="relative z-10 max-w-6xl mx-auto w-full">
-            <div class="font-mono text-accent text-xs uppercase tracking-widest mb-6 flex items-center gap-3" data-aos="fade-up">
-                <span class="w-8 h-px bg-accent"></span>
-                Перформанс-стратег · 9 лет · 900+ млн ₽ бюджетов
+        <div class="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-center gap-12 text-center lg:text-left">
+            <div class="relative z-20 flex flex-col items-center lg:items-start">
+                <div class="font-mono text-accent text-[10px] md:text-xs uppercase tracking-widest mb-6 flex items-center gap-3 whitespace-normal lg:whitespace-nowrap" data-aos="fade-up">
+                    <span class="w-8 h-px bg-accent"></span>
+                    Перформанс-стратег · 9 лет · 900+ млн ₽ бюджетов
+                </div>
+                <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-tight mb-6 text-gradient" data-aos="fade-up" data-aos-delay="100">
+                    ЕГОР КОШЕЛЕВ
+                </h1>
+                <h2 class="font-sans font-semibold text-3xl md:text-5xl text-zinc-400 mb-8 uppercase leading-tight" data-aos="fade-up" data-aos-delay="200">
+                    Иду до результата
+                </h2>
+                <p class="max-w-xl text-zinc-400 text-base md:text-lg leading-relaxed mb-10" data-aos="fade-up" data-aos-delay="300">
+                    Не агентство. Конкретный человек с конкретной ответственностью. Беру рекламные системы под управление — и не исчезаю в момент кризиса.
+                </p>
+                <div class="flex flex-col md:flex-row gap-6 items-center lg:items-start" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#contact" class="bg-accent text-zinc-950 px-8 py-4 rounded-full font-mono text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform flex items-center gap-2 group w-full md:w-auto justify-center">
+                        Обсудить задачу
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                    <div class="font-mono text-[10px] uppercase tracking-widest text-zinc-600 text-center lg:text-left">
+                        Для директоров по маркетингу · руководителей перформанса · операционных директоров
+                    </div>
+                </div>
             </div>
-            <h1 class="font-display text-5xl md:text-9xl leading-tight mb-6 text-gradient" data-aos="fade-up" data-aos-delay="100">
-                ЕГОР КОШЕЛЕВ
-            </h1>
-            <h2 class="font-sans font-semibold text-3xl md:text-5xl text-zinc-400 mb-8 uppercase leading-tight" data-aos="fade-up" data-aos-delay="200">
-                Иду до результата
-            </h2>
-            <p class="max-w-xl text-zinc-400 text-base md:text-lg leading-relaxed mb-10" data-aos="fade-up" data-aos-delay="300">
-                Не агентство. Конкретный человек с конкретной ответственностью. Беру рекламные системы под управление — и не исчезаю в момент кризиса.
-            </p>
-            <div class="flex flex-col md:flex-row gap-6 items-start md:items-center" data-aos="fade-up" data-aos-delay="400">
-                <a href="#contact" class="bg-accent text-zinc-950 px-8 py-4 rounded-full font-mono text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform flex items-center gap-2 group w-full md:w-auto justify-center">
-                    Обсудить задачу
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                </a>
-                <div class="font-mono text-[10px] uppercase tracking-widest text-zinc-600 text-center md:text-left">
-                    Для директоров по маркетингу · руководителей перформанса · операционных директоров
+            <div class="relative flex justify-center lg:justify-end" data-aos="fade-left" data-aos-delay="300">
+                <div class="relative overflow-hidden rounded-2xl hero-image-mask w-full max-w-md lg:max-w-none">
+                    <img src="image.webp" alt="Егор Кошелев" class="w-full h-auto max-h-[600px] object-cover grayscale opacity-80 md:opacity-100 transition-opacity duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-l from-transparent via-zinc-950/20 to-zinc-950 pointer-events-none"></div>
                 </div>
             </div>
         </div>
+
+        <!-- Background elements -->
+        <div class="absolute top-1/2 right-0 -translate-y-1/2 opacity-20 blur-3xl w-64 h-64 md:w-96 md:h-96 bg-accent rounded-full -z-10"></div>
+    </section>
 
         <!-- Background elements -->
         <div class="absolute top-1/2 right-0 -translate-y-1/2 opacity-20 blur-3xl w-64 h-64 md:w-96 md:h-96 bg-accent rounded-full -z-10"></div>
