@@ -906,25 +906,8 @@
             const name = document.getElementById('cf-name').value.trim();
             const budget = document.getElementById('cf-budget').value;
             const task = document.getElementById('cf-task').value.trim();
-            const contact = document.getElementById('cf-contact').value.trim();
-            const contactError = document.getElementById('contact-error');
-            const contactInput = document.getElementById('cf-contact');
 
-            // Validate contact format
-            if (!validateContact(contact)) {
-                contactError.classList.remove('hidden');
-                contactInput.classList.add('border-red-500');
-                contactInput.classList.remove('border-zinc-800');
-                contactInput.focus();
-                return;
-            }
-
-            // Clear error state
-            contactError.classList.add('hidden');
-            contactInput.classList.remove('border-red-500');
-            contactInput.classList.add('border-zinc-800');
-
-            const text = `Заявка с сайта:\n\nИмя: ${name}\nБюджет: ${budget}\nЗадача: ${task}\nКонтакт: ${contact}`;
+            const text = `Заявка с сайта:\n\nИмя: ${name}\nБюджет: ${budget}\nЗадача: ${task}`;
             const telegramUrl = `https://t.me/kosheiev?text=${encodeURIComponent(text)}`;
 
             // Try to open Telegram
@@ -937,16 +920,6 @@
                 }).catch(() => {
                     alert('Не удалось открыть Telegram. Пожалуйста, напишите напрямую: @kosheiev');
                 });
-            }
-        });
-
-        // Real-time validation on input
-        document.getElementById('cf-contact').addEventListener('input', function() {
-            const contactError = document.getElementById('contact-error');
-            if (this.value.trim() && validateContact(this.value.trim())) {
-                contactError.classList.add('hidden');
-                this.classList.remove('border-red-500');
-                this.classList.add('border-zinc-800');
             }
         });
 
