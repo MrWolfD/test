@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Кейсы Егора Кошелева — перформанс-стратега с 9-летним опытом. Результаты работы: 900+ млн ₽ бюджетов, 150+ проектов.">
+    <meta name="keywords" content="кейсы, перформанс-маркетинг, telegram ads, таргетированная реклама, рекламные кампании">
+    <meta name="author" content="Егор Кошелев">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c8f23a'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E">
+
+    <title>Кейсы — Егор Кошелев</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Кейсы — Егор Кошелев">
+    <meta property="og:description" content="30 реальных кейсов с цифрами. 9 лет в перформансе, 900+ млн ₽ бюджетов. Telegram Ads, ВКонтакте, Яндекс Директ.">
+    <meta property="og:image" content="https://koshelev.agency/image.webp">
+    <meta property="og:url" content="https://koshelev.agency/cases.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        zinc: { 950: '#09090b' },
+                        accent: '#c8f23a',
+                    },
+                    fontFamily: {
+                        sans: ['"IBM Plex Sans"', 'sans-serif'],
+                        mono: ['"IBM Plex Mono"', 'monospace'],
+                        display: ['"Bebas Neue"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #09090b; color: #f4f4f5; }
+        .glass {
+            background: rgba(9, 9, 11, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(63, 63, 70, 0.3);
+        }
+        .bento-card {
+            background: linear-gradient(145deg, rgba(24, 24, 27, 0.4), rgba(9, 9, 11, 1));
+            border: 1px solid rgba(63, 63, 70, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            border-color: #c8f23a;
+            box-shadow: 0 0 20px rgba(200, 242, 58, 0.1);
+            transform: translateY(-4px);
+        }
+        .spotlight {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(200, 242, 58, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .filter-btn {
+            background: transparent;
+            border: 1px solid rgba(63, 63, 70, 0.4);
+            color: #a1a1aa;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .filter-btn:hover:not(.active) {
+            border-color: #c8f23a;
+            color: #c8f23a;
+        }
+        .filter-btn.active {
+            background: #c8f23a;
+            border-color: #c8f23a;
+            color: #09090b;
+            font-weight: 700;
+        }
+        .case-card { transition: opacity 0.3s ease, transform 0.3s ease; }
+        .case-card.hidden-card { display: none; }
+        .insight-block {
+            background: rgba(200, 242, 58, 0.04);
+            border-left: 2px solid rgba(200, 242, 58, 0.3);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .spotlight { display: none !important; }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-accent selection:text-zinc-950">
+
+    <div id="spotlight" class="spotlight"></div>
+    <div id="scroll-progress" class="fixed top-0 left-0 h-0.5 bg-accent z-[45] transition-all duration-100" style="width: 0%" aria-hidden="true"></div>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 bg-zinc-800/50 backdrop-blur-lg border border-zinc-700/50 text-accent w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-zinc-700/70 hover:scale-110 hover:border-accent/50" aria-label="Наверх">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <nav class="fixed top-0 left-0 right-0 z-40 glass py-4 px-4 md:px-8 lg:px-12 flex justify-between items-center" aria-label="Основная навигация">
+        <div class="font-display text-xl tracking-widest text-accent">ЕГОР КОШЕЛЕВ</div>
+        <div class="hidden md:flex items-center gap-8 font-mono text-[11px] uppercase tracking-widest text-zinc-400">
+            <a href="index.html#services" class="hover:text-accent transition-colors">Услуги</a>
+            <a href="cases.html" class="text-accent hover:text-accent transition-colors">Кейсы</a>
+            <a href="index.html#team" class="hover:text-accent transition-colors">Команда</a>
+            <a href="index.html#contact" class="bg-accent text-zinc-950 px-5 py-2 rounded-full font-mono text-[11px] font-bold uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2 group">
+                Написать
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-accent transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 z-[105] bg-zinc-950/95 backdrop-blur-xl hidden flex-col justify-center items-center gap-8 font-mono text-sm uppercase tracking-widest text-zinc-400 transition-all duration-300" role="dialog" aria-modal="true" aria-label="Мобильное меню">
+        <button id="close-menu" class="absolute top-6 right-6 text-zinc-400 hover:text-accent">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <a href="index.html#services" class="mobile-link text-2xl hover:text-accent transition-colors">Услуги</a>
+        <a href="cases.html" class="mobile-link text-2xl hover:text-accent transition-colors">Кейсы</a>
+        <a href="index.html#team" class="mobile-link text-2xl hover:text-accent transition-colors">Команда</a>
+        <a href="index.html#contact" class="mobile-link text-2xl text-accent border border-accent/30 px-6 py-2 rounded-full">Написать</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="relative min-h-[50vh] flex flex-col justify-center px-4 md:px-12 pt-24 pb-8 overflow-hidden max-w-[100vw]">
+        <div class="relative z-10 max-w-6xl mx-auto w-full">
+            <div class="mb-4" data-aos="fade-up">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="w-8 h-px bg-accent"></span>
+                    <div class="font-mono text-accent text-xs uppercase tracking-widest">Кейсы</div>
+                </div>
+                <h1 class="font-sans font-semibold text-5xl md:text-7xl lg:text-8xl mb-3 text-gradient">Результаты работ</h1>
+                <p class="max-w-3xl text-zinc-400 text-lg leading-relaxed">9 лет опыта · 900+ млн ₽ бюджетов · 30 разобранных кейсов. Ниже — реальные проекты с цифрами, решениями и инсайтами — то, что клиенты обычно не показывают.</p>
+            </div>
+            <div class="flex items-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="index.html" class="text-accent hover:text-accent/80 transition-colors flex items-center gap-2 group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    На главную
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section -->
+    <section class="py-12 px-4 md:px-12 max-w-7xl mx-auto overflow-hidden max-w-[100vw]">
+
+        <!-- Stats Counter -->
+        <div id="stats-counter" class="mb-12 grid grid-cols-3 gap-4 md:gap-6" data-aos="fade-up">
+            <div class="bento-card p-6 md:p-10 rounded-2xl md:rounded-3xl text-center">
+                <div class="font-display text-4xl md:text-6xl text-white leading-none mb-2">
+                    <span id="counter-views">0</span><span class="text-accent">+</span>
+                </div>
+                <div class="font-mono text-[9px] md:text-[11px] uppercase tracking-widest text-zinc-500 mt-2">млрд показов</div>
+            </div>
+            <div class="bento-card p-6 md:p-10 rounded-2xl md:rounded-3xl text-center">
+                <div class="font-display text-4xl md:text-6xl text-white leading-none mb-2">
+                    <span id="counter-clicks">0</span><span class="text-accent">+</span>
+                </div>
+                <div class="font-mono text-[9px] md:text-[11px] uppercase tracking-widest text-zinc-500 mt-2">млн кликов</div>
+            </div>
+            <div class="bento-card p-6 md:p-10 rounded-2xl md:rounded-3xl text-center">
+                <div class="font-display text-4xl md:text-6xl text-white leading-none mb-2">
+                    <span id="counter-actions">0</span><span class="text-accent">+</span>
+                </div>
+                <div class="font-mono text-[9px] md:text-[11px] uppercase tracking-widest text-zinc-500 mt-2">млн целевых действий</div>
+            </div>
+        </div>
+        <p class="font-mono text-[10px] text-zinc-600 mb-10 -mt-6" data-aos="fade-up">— расчёт на основании 30 кейсов, часть показателей экстраполированы по средним CPM/CTR</p>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2 mb-10" data-aos="fade-up">
+            <button class="filter-btn active font-mono text-[11px] uppercase tracking-widest px-4 py-2 rounded-full" data-filter="all">Все · 30</button>
+            <button class="filter-btn font-mono text-[11px] uppercase tracking-widest px-4 py-2 rounded-full" data-filter="telegram">Telegram</button>
+            <button class="filter-btn font-mono text-[11px] uppercase tracking-widest px-4 py-2 rounded-full" data-filter="ecommerce">E-commerce</button>
+            <button class="filter-btn font-mono text-[11px] uppercase tracking-widest px-4 py-2 rounded-full" data-filter="media">Медиа & B2B</button>
+            <button class="filter-btn font-mono text-[11px] uppercase tracking-widest px-4 py-2 rounded-full" data-filter="offline">Офлайн</button>
+            <button class="filter-btn font-mono text-[11px] uppercase tracking-widest px-4 py-2 rounded-full" data-filter="edtech">Образование</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="cases-grid">
+
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="telegram" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Telegram Ads / Медиа / Россия</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">1 000 000 подписчиков для 200+ каналов — когда у Telegram Ads не было ничего</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Проект стартовал в первые недели запуска Telegram Ads — не было API, аналитики, геотаргетинга и отработанных практик. Нужно было с нуля вырастить 10 тематических и 200+ городских каналов при полном контроле бюджета и прозрачной отчётности.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Пилот на 10 каналах: прогноз CPL, стратегия масштабирования на 200+</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Собственный парсер для сбора статистики по 10 000+ объявлениям ежедневно</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Ручная база региональных Telegram-пабликов вместо отсутствующего геотаргетинга</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Команда: трафик-специалисты, аналитики, координаторы — десятки запусков в сутки</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">350 млн</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Показов</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">1 млн+</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Подписчиков</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">10K+</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Объявлений</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Без инструментов платформы победил тот, кто создал инструменты сам — парсер стал операционным ядром всего проекта.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="media" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">GovTech / Социология / Facebook* & Instagram*</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">445 миллионов показов для социологических опросов по всей России</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">С нуля выстроить систему запуска рекламных кампаний для сбора обратной связи граждан через соцопросы. Нужна не просто реклама, а инфраструктура под тысячи кампаний одновременно на федеральном уровне.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Построение инфраструктуры из сотен рекламных кабинетов</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Процесс потокового запуска с минимальным сроком согласования</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Сегментация по регионам и демографии для точечного охвата</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Система отчётности в режиме реального времени</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">445 млн</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Показов</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">11,7K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Кампаний</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">346K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Ответов</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Масштаб берётся не бюджетом, а процессом — без отлаженной инфраструктуры 11 000 кампаний превратились бы в хаос.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">EdTech / Перформанс / Facebook* Ads / Global</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">Глобальная рекламная система для 500+ мероприятий за 1.5 года</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">EdTech-платформа с сетью партнёров по всему миру проводила сотни мероприятий ежемесячно, но не набирала участников. Не было ни отдела рекламы, ни процессов, ни команды — только запрос на результат.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Выстроена экосистема рекламных аккаунтов Facebook для работы в десятках стран</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Подобрана и обучена команда для стабильных запусков без простоев</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Внедрён процесс постановки задач на контент и запуск кампаний</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Отчётность по каждой кампании с контролем CPL в реальном времени</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">$165K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">53,4K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">$3,09</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPL</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ 500+ мероприятий без единого сбоя — это не результат одного специалиста, а результат системы.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="ecommerce" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Игры / Performance / ВКонтакте</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">517 миллионов показов для 103 игр — годовой конвейер запусков на ВКонтакте</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Паблишер игровых продуктов выпускал новые тайтлы на постоянной основе — каждая игра требовала отдельного запуска с нуля. Нужна была система, которая работает как конвейер: быстрый вход, тест, масштабирование победителей — и так 103 раза подряд в течение года.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Единый процесс запуска под каждую игру: минимальный бюджет → тест → масштабирование эффективных</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Ключевая воронка: показ → клик → уникальный посетитель в Метрике — именно уники стали главным KPI</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Ежедневная отчётность по каждому тайтлу: CTR, стоимость клика, уники в разрезе дня</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Оперативное перераспределение бюджета в пользу эффективных запусков и отключение слабых в реальном времени</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">28,2M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">517M</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Показов</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">3,2M</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Уникальных</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Главный KPI — уникальный посетитель, не клик. Оптимизация по кликам давала бы искажённую картину: один человек мог кликнуть несколько раз — уник не соврёт.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="ecommerce" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Ювелирка / Performance / FB* + Яндекс + ВК</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">51 000 лидов за 4 года для ювелирной сети в пяти городах мира</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Офлайн-бизнес в премиальном сегменте в пяти городах: Москва, Питер, Новосибирск, Алматы, Нью-Йорк. Разные рынки, разные конкуренты, единый бренд.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Мультиканальная стратегия с учётом локальной специфики каждого города</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Раздельные кабинеты и бюджеты под рынки RU, KZ и US</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Facebook Ads, Яндекс.Директ, ВКонтакте, myTarget — под каждый рынок своя связка</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>4+ года стабильного сопровождения с ростом показателей</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">27,8M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">51K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Лидов</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">4+ года</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Сотрудничество</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Масштабирование на несколько городов — это не копирование стратегии, а адаптация: каждый рынок живёт по своим правилам.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Медицина / Образование / Яндекс + ВК + FB*</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">ROMI 1502% — рекордный запуск в нише обучения стоматологов</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Узкая профессиональная аудитория с высоким чеком продукта. Нужно выйти за рамки стандартных подходов и найти точки входа в закрытое сообщество стоматологов-имплантологов.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Точная сегментация по профессиональным интересам и специализациям</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Мультиканальный запуск: Яндекс.Директ, ВКонтакте, Facebook Ads</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Тестирование офферов под разные уровни профессиональной подготовки</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Оптимизация воронки под ROMI, а не только CPL</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">20M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">105K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">1502%</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">ROMI</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ В профессиональных нишах точность сегментации важнее бюджета — именно это дало рекордный ROMI.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Маркетинг / Образование / Мультиканал</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">100 000 регистраций в двух школах одновременно — маркетинг и копирайтинг</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Два продукта с разными ЦА под одним брендом. Нужно удерживать эффективность при бюджете от 2,5M ₽ в месяц и не смешивать аудитории.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Раздельные стратегии и бюджеты под каждый продукт</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Разный язык, разные боли: маркетологи vs. копирайтеры</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Постоянное A/B тестирование офферов и креативов</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Перераспределение бюджета в реальном времени по результатам</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">24,3M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">100K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">241 ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPL</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Два продукта — два мира. Единая стратегия "размывает" оба.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Дизайн / Образование / FB* + Яндекс + ВК</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">ROMI до 1200% — школа веб-дизайна на трёх платформах одновременно</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Широкая конкурентная ниша с разным уровнем осведомлённости аудитории. Нужно выстроить систему на трёх рекламных площадках с синергией между ними.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Мультиканальный запуск: Facebook Ads, Яндекс.Директ, ВКонтакте</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Посевы ВКонтакте как дополнительный канал охвата</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Разная механика под каждый канал с учётом аудитории платформы</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Оптимизация под ROMI, а не только CPL</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">17,3M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">1200%</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">ROMI макс</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">3 канала</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Платформы</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Синергия каналов важнее оптимизации каждого в отдельности — вместе они дали ROMI выше 1000%.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="media" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Медиа / Контент / Перформанс</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">272 000 читателей сложных технических статей на Хабре по 6₽ за визит</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Технический журнал публикует глубокие материалы для IT-аудитории — разработчиков, архитекторов, тимлидов. Задача: привлекать реальных читателей, а не случайные клики. Аудитория требовательная — "просто трафик" здесь не работает.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Таргетинг точно под IT-аудиторию: разработчики, инженеры, технари — не широкий интерес, а профиль</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Оптимизация под посещение, не клик: воронка показ → клик → реальная сессия в Метрике</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Постепенное масштабирование бюджета по мере накопления данных об аудитории</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Анализ по двухмесячным периодам: перераспределение бюджета под сезонность и эффективность</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">1,65M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">272K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Визитов</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">6,06 ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Цена визита</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ CTR 1,99% на сложном техническом контенте — признак точного попадания в аудиторию. 42% кликов доходили до реального чтения: дешёвый трафик не из той аудитории дал бы 5% и отказ.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Финансы / Образование / Яндекс.Директ</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">144 000 регистраций с CPL 98₽ — онлайн-школа бухгалтеров</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Конкурентный рынок онлайн-образования в нише бухгалтерии. Задача — масштабировать поток регистраций без потери эффективности при росте бюджета.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Масштабирование кампаний в Яндекс.Директ с удержанием CPL</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Постоянная ротация офферов и форматов: поиск, РСЯ, ретаргетинг</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Системный анализ конверсий на каждом этапе воронки</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Управление бюджетом с ROMI от 350% до 600%</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">14M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">144K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">600%</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">ROMI макс</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Ротация офферов — ключ к удержанию CPL при масштабировании: без новых гипотез аукцион перегревается.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Языки / Образование / Яндекс + Facebook*</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">55 000+ регистраций и ROMI 300% — онлайн-школа английского языка</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Высококонкурентная ниша с постоянно растущим аукционом. Нужно удерживать поток регистраций и рентабельность на протяжении многолетнего сотрудничества.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Долгосрочная стратегия Яндекс.Директ с постоянной оптимизацией</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Facebook Ads как канал масштабирования и расширения охвата</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Адаптация под сезонность и изменения аукциона</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Бюджет до 1,2M ₽ в месяц при сохранении рентабельности</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">14M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">55K+</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">300%+</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">ROMI</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ В конкурентных нишах выигрывает не тот, кто больше тратит, а тот, кто быстрее адаптирует офферы.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Здоровье / Перформанс / Мультиканал</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">25 000 лидов с CPL 45₽ — школа диетологии и детокса</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Высококонкурентная ниша здорового питания. Нужно привлечь большой объём тёплых лидов при жёстком ограничении CPL ниже 50₽.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Тестирование каналов и форматов для поиска оптимальных связок</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Разработка офферов под актуальные боли ЦА</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Широкий охват с оптимизацией по качеству лида</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Масштабирование при удержании CPL ниже 50₽</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">1,1M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">25K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Лидов</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">45 ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPL</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ В нише ЗОЖ работают конкретные боли — "минус X кг" бьёт точнее, чем общие "лёгкость и здоровье".</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="telegram" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Медиа / Telegram Ads / Культура</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">79 590 подписчиков за €0,93 — Telegram-канал про культуру и искусство</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Культурная тематика в Telegram — аудитория разборчивая. Нужно привлечь качественных подписчиков с низкой стоимостью и реальной вовлечённостью.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Точечный таргетинг в Telegram Ads по тематически близким каналам</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Тестирование форматов объявлений и заголовков</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Оптимизация ставок для снижения CPS без потери объёма</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Масштабирование на проверенных связках</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">€73,7K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">79,6K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Подписчиков</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">€0,93</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPS</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ В Telegram цена подписчика зависит от точности попадания в похожую аудиторию — широкий таргет здесь не работает.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="media" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Производство / Медиа / Посевы</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">18 000 000 охвата через 4 200 посевов — продвижение септиков для частного сектора</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Узкая специфическая аудитория — владельцы частных домов. Продукт не продаётся через стандартный таргет: нужен медийный охват в правильном контексте.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Медийная кампания через посевы в Telegram, ВКонтакте и Одноклассниках</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Таргетинг по тематическим сообществам: дача, загородная жизнь, стройка</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>4 200 публикаций с полной маркировкой рекламы</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>3 платформы для охвата разных сегментов аудитории</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">7,5M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">18M</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Охват</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">4 200</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Посевов</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Для нишевых продуктов посев в тематическом паблике работает лучше таргета — читатель воспринимает это как рекомендацию, а не рекламу.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Медицина / Мобайл / Таргет</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">5 100+ установок приложения для стоматологов по 35₽ каждая</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Нишевое профессиональное приложение для практикующих стоматологов. Узкая ЦА с высоким барьером на установку — специалисты не устанавливают что попало.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Таргетинг по профессиональным сегментам: стоматологи, дентальные клиники</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Акцент на ценность для ежедневной практики, а не на "попробуй"</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Оптимизация кампаний под целевую стоимость установки</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Масштабирование при достижении target CPI</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">180K ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">5 100+</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Установок</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">35 ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPI</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ В профессиональных приложениях нужно продавать не "попробуй", а "вот как это решит твою ежедневную задачу".</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Психология / Перформанс / Квиз-воронка</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">CPL 4,8₽ через квиз-воронку — онлайн-продукт по отношениям</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Широкая ЦА в теме отношений, но стандартные воронки дают высокий CPL. Нужно найти механику, которая разогревает аудиторию ещё до лендинга.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Квиз как вход в воронку вместо стандартного лендинга</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Вопросы сегментируют аудиторию и разогревают интерес</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Персонализированный результат создаёт эффект инвестиции</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Автоворонка прогрева на основе ответов квиза</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">5 166</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Лидов</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">4,8 ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPL</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">Квиз</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Механика</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Квиз работает как разогрев: человек, ответивший на 5 вопросов, уже инвестировал время и готов к следующему шагу.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="telegram" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Telegram Ads / Каналы + Боты / Посевы</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">50 000 подписчиков и запусков бота по 222₽ — комплексное продвижение в Telegram</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Задача шире стандартного роста канала: одновременно нужны подписчики, вовлечение в боты и продвижение активностей — всё в рамках единой стратегии. KPI считался как комбинированный: подписчик + запуск бота.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Telegram Ads для прямого привлечения подписчиков и холодных запусков бота</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Посевы в тематических каналах — вирусный эффект и дополнительный органический рост</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Кросспостинг с партнёрскими каналами для снижения стоимости подписчика</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>1,2K объявлений с оптимизацией под комбинированный KPI: подписка + активация бота</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">77 млн</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Показов</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">50K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Целевых действий</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">222 ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Стоимость</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Посевы + Telegram Ads дают эффект умножения: органический рост от посевов снижает стоимость подписчика из платного трафика.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="telegram" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Здоровье / Telegram Ads + Бот / ЗОЖ</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">€0,60 за подписчика — нутрициология в Telegram с ботом-вовлечением</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Популярная тема ЗОЖ с высокой органической активностью. Нужно привлечь аудиторию, которая уже интересуется нутрициологией и сразу готова к взаимодействию.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Telegram Ads с таргетингом по каналам здорового образа жизни и питания</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Интеграция бота для автоматического вовлечения после подписки</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Тест форматов объявлений под ЗОЖ-аудиторию</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Масштабирование при достижении целевого CPS</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">€9,5K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">16K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Подписчиков</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">€0,60</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPS</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Бот как первый шаг после подписки поднимает вовлечённость — подписчик сразу становится активным участником.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="offline" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Бизнес / Офлайн / ВК + Яндекс + Telegram</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">3 960 лидов на офлайн-мероприятия для предпринимателей в 3 городах</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Офлайн-события с коротким циклом принятия решения и географическими ограничениями. Бизнес-аудитория — одна из самых дорогих в таргете.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Мультиканальный запуск: ВКонтакте, Яндекс.Директ, Telegram Ads, посевы</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Гео-таргетинг под каждый из трёх городов</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Разные офферы под каждый канал с учётом его аудитории</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Перераспределение бюджета между каналами в реальном времени</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">3,8M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">3 960</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Лидов</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">3 города</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">География</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Для офлайн-событий критична скорость: мультиканал даёт гибкость — если один канал просел, бюджет уходит в рабочий.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="telegram" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Бизнес / Telegram Ads / Финансы</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">26 500 подписчиков бизнес-канала через Telegram Ads</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Бизнес-аудитория в Telegram конкурентна и стоит дороже среднего. Задача — набрать вовлечённую аудиторию предпринимателей и управленцев при контролируемом CPS.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Таргетинг по каналам бизнес и инвестиционной тематики</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Тест объявлений с разными ценностными предложениями</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Контроль качества подписчиков через показатели вовлечённости</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Оптимизация ставок для удержания целевого CPS</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">€37,4K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">26,6K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Подписчиков</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">€1,41</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPS</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Качество важнее цены — дешёвый подписчик в бизнес-нише без вовлечённости не стоит ничего.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Дизайн / Образование / Мультиканал</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">11 549 регистраций с CPL 152₽ — онлайн-школа брендинга</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Нишевый продукт на стыке дизайна и предпринимательства. Целевая аудитория — дизайнеры и владельцы малого бизнеса — думает и говорит по-разному.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Двусторонний таргетинг: отдельно дизайнеры, отдельно предприниматели</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Разные офферы и визуальный язык под каждый сегмент</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Тестирование каналов с оптимизацией по конверсии в покупку</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Масштабирование при ROMI выше порогового значения</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">1,8M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">11,5K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">152 ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPL</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Один продукт, разные аудитории — раздельные кампании дают контроль над CPL каждого сегмента.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Финансы / Образование / Яндекс.Директ</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">10 154 регистрации в школу инвестирования через Яндекс.Директ</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Финансовая ниша с высоким уровнем недоверия аудитории. Нужно привлечь осознанных лидов, готовых к обучению, а не случайные клики.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Поисковые кампании по горячим запросам — фокус на намерение</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Офферы со снижением барьера входа: бесплатный вебинар / первый урок</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Оптимизация под качество лида, не только стоимость клика</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>РСЯ для расширения охвата на "тёплую" аудиторию</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">2,5M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">10,2K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">250 ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPL</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ В финансовой нише доверие = конверсия: горячий поиск даёт более осознанного лида, чем таргет по интересам.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="ecommerce" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Ювелирка / Instagram* / США</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">$8,7 за обращение в студию обручальных колец в Нью-Йорке</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Дорогая локация, малый объём обращений, вся реклама шла через кнопку "продвигать" в Instagram. Нью-Йорк — один из самых дорогих рынков для таргета в мире.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Перевод рекламы из кнопки "продвигать" в полноценный кабинет Facebook</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Тест воронок: сообщения в Instagram, WhatsApp, одно- и многостраничные сайты</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Фокус на видео с процессом изготовления колец — максимальный эмоциональный отклик</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Масштабирование бюджета с удержанием стоимости обращения 9 месяцев</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">$32,5K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">3,7K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Обращений</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">$8,7</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Стоимость</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Видео с процессом изготовления обошло все другие форматы — люди покупают историю, а не продукт.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">E-commerce / Образование / Мультиканал</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">6 392 регистрации за 14 дней — интенсивный запуск школы Wildberries</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Короткое окно для набора аудитории — 14 дней до старта живого вебинара. Нужен максимальный объём регистраций при жёстких временных ограничениях.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Интенсивный запуск с дневным бюджетом до 358K ₽</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Агрессивное масштабирование рабочих связок без задержек</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Постоянный мониторинг и оперативная оптимизация каждый день</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Фокус на горячую аудиторию, уже интересующуюся маркетплейсами</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">1,1M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">6 392</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">14 дней</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Срок</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Интенсивный запуск требует мгновенной реакции — каждый день промедления с оптимизацией равен потерянным регистрациям.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="offline" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Бизнес / Образование / Перформанс</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">2 200 регистраций на образовательный проект для предпринимателей — в сжатые сроки</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Образовательный проект для предпринимателей с жёсткими дедлайнами: нужны регистрации, параллельный рост узнаваемости бренда — и всё это при минимальном времени на «разгон» кампаний.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Широкое тестирование 1,6K объявлений параллельно — без времени на последовательный перебор</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Плотный таргетинг на узкую ЦА предпринимателей с быстрой ротацией гипотез</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Одновременная работа на конверсию и охват: регистрации + имиджевые форматы</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Ежедневное перераспределение бюджета в пользу рабочих связок в реальном времени</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">3,6 млн</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Показов</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">2 200</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">672 ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPR</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Широкое тестирование с первого дня — единственный способ найти рабочую связку, когда нет времени на последовательный A/B тест.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">SMM / Образование / Мультиканал</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">66 000 регистраций с ROMI 310% — школа stories-мейкеров</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Нишевый продукт в быстро растущей теме создания историй для соцсетей. Нужен масштабный поток регистраций при удержании ROMI выше 300%.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Запуск на нескольких рекламных площадках с раздельными стратегиями</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Масштабирование связок с лучшим ROMI в нужный момент</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Постоянное обновление креативов под тренды ниши</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Оптимизация на всех этапах воронки: регистрация → покупка</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">4,6M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">66K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">70 ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPL</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Трендовая ниша даёт низкий CPL только пока аудитория "тёплая" — важно масштабировать в нужный момент.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Дизайн / Образование / Яндекс + ВК</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">ROMI до 450% и 22 800 регистраций для школы ландшафтного дизайна</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Нишевая профессия с ограниченной, но платёжеспособной аудиторией. Нужно выйти на масштаб при CPL, позволяющем держать ROMI выше 400%.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Двуканальный запуск: Яндекс.Директ для горячего спроса + ВКонтакте для охвата</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Тестирование форматов и сегментов аудитории</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Дневной бюджет до 116K ₽ при удержании эффективности</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Оптимизация под конверсию в покупку, не только в регистрацию</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">7,6M ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">22,8K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">450%</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">ROMI макс</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Горячий поиск (Яндекс) + охватный таргет (ВК) дают лучший баланс цены и объёма.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">E-commerce / Instagram* / СНГ</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">Выход на рынок СНГ с ROMI 86% без единой стартовой статистики</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Компания вышла на рынок СНГ с продуктом, проверенным в России, — но без каких-либо данных о стоимости трафика и поведении местной аудитории. Всё тестировалось с чистого листа.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Создание рекламных материалов: статика и видео под особенности рынка</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Тестовые запуски с аналитикой, итерации на основе данных</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Масштабирование связок, показавших результат</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Telegram-бот для автоматической обработки заявок и рассылок акций</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">$7K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">6K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">86%</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">ROMI</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Самой конвертирующей связкой оказалось видео + Telegram-бот с автоматическими рассылками акций.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">EdTech / Видео / Колумбия / Instagram*</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">$2,7 за регистрацию в школу программирования через видео-систему</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Статичный контент не работал — кампании выгорали, существующая команда не давала результата. Нужна была система производства видео-креативов, а не разовый запуск.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Выстроен конвейер: кастинг моделей, генерация сценариев, монтаж</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Видео разделялось на 3-секундный хук и основную часть — отдельный A/B тест</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Несколько хуков на каждую модель запускались одновременно</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Оптимизация кампаний на основе данных постоянного тестирования</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">$67K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">25K</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">$2,7</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPL</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ Разделение видео на хук и тело позволило тестировать в 3× больше гипотез при том же бюджете.</p>
+                </div>
+            </div>
+
+            <div class="bento-card p-8 rounded-3xl case-card" data-category="edtech" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-mono text-accent text-[10px] uppercase mb-4">Психология / Образование / Мультиканал</div>
+                <h3 class="font-display text-3xl mb-5 leading-tight">2 989 регистраций с CPL 64₽ — практикум по синдрому самозванца</h3>
+                <div class="mb-4">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Задача</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Психологическая тема требует тонкого подхода: аудитория чувствительная, стандартные "давящие" офферы не работают и вызывают отторжение.</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-zinc-300 font-medium text-sm mb-2">Решение</h4>
+                    <ul class="text-zinc-400 text-sm space-y-1.5">
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Разработка офферов на языке аудитории — без давления, с пониманием</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Тест форматов: видео vs. статика, прямой оффер vs. сторителлинг</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Таргетинг по психологии, личностному росту, предпринимательству</li>
+                        <li class="flex gap-2"><span class="text-accent flex-shrink-0">—</span>Масштабирование на связках с мягким входом в воронку</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-zinc-800">
+                    <div>
+                        <div class="text-2xl font-display text-white">180K ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Бюджет</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">2 989</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">Регистраций</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-display text-white">64 ₽</div>
+                        <div class="text-[10px] font-mono text-zinc-500 uppercase">CPL</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-xl insight-block">
+                    <p class="text-xs text-zinc-400">→ В психологических нишах работает "я понимаю тебя", а не "купи сейчас" — мягкий оффер конвертировал лучше прямого.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="font-mono text-[9px] text-zinc-700 mt-10" data-aos="fade-up">* Meta Platforms Inc. признана экстремистской организацией, её деятельность запрещена на территории РФ.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 md:px-12 border-t border-zinc-900 max-w-7xl mx-auto overflow-hidden max-w-[100vw]">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
+            <div class="font-display text-xl tracking-widest text-zinc-500">ЕГОР КОШЕЛЕВ</div>
+            <div class="flex gap-6 font-mono text-[10px] uppercase text-zinc-600">
+                <a href="https://t.me/kosheiev" class="hover:text-accent transition-colors">Telegram</a>
+                <a href="index.html#services" class="hover:text-accent transition-colors">Услуги</a>
+                <a href="cases.html" class="text-accent hover:text-accent transition-colors">Кейсы</a>
+                <a href="index.html#team" class="hover:text-accent transition-colors">Команда</a>
+                <a href="index.html#contact" class="hover:text-accent transition-colors">Контакт</a>
+                <a href="privacy.html" class="hover:text-accent transition-colors">Политика конфиденциальности</a>
+            </div>
+            <div class="font-mono text-[10px] text-zinc-700">© 2026</div>
+        </div>
+        <div class="border-t border-zinc-900 pt-4">
+            <p class="font-mono text-[10px] text-zinc-700 text-center">ИП Кошелев Егор Владимирович · ИНН 632129942600 · ОГРНИП 326632700045536 · Россия, Самарская область, г. Тольятти · <a href="mailto:egor@koshelev.agency" class="hover:text-zinc-500 transition-colors">egor@koshelev.agency</a></p>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 bg-zinc-900/95 backdrop-blur border-t border-zinc-800 px-4 py-4 md:px-12" style="display:none">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="font-mono text-[11px] text-zinc-400 leading-relaxed">Сайт использует файлы cookie для аналитики и корректной работы. Продолжая использование сайта, вы соглашаетесь с <a href="privacy.html" class="text-accent hover:underline">Политикой конфиденциальности</a>.</p>
+            <button id="cookie-accept" class="flex-shrink-0 bg-accent text-zinc-950 font-mono text-[11px] font-bold uppercase tracking-widest px-6 py-2 rounded-full hover:scale-105 transition-transform">Принять</button>
+        </div>
+    </div>
+
+    <script>
+        // Cookie banner
+        const cookieBanner = document.getElementById('cookie-banner');
+        const backToTopBtn = document.getElementById('back-to-top');
+        function updateBackToTopOffset() {
+            const bannerH = cookieBanner.offsetHeight;
+            backToTopBtn.style.bottom = (cookieBanner.style.display !== 'none' ? bannerH + 16 : 32) + 'px';
+        }
+        if (!localStorage.getItem('cookie-accepted')) {
+            cookieBanner.style.display = 'block';
+        }
+        updateBackToTopOffset();
+        document.getElementById('cookie-accept').addEventListener('click', () => {
+            localStorage.setItem('cookie-accepted', '1');
+            cookieBanner.style.display = 'none';
+            updateBackToTopOffset();
+        });
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        AOS.init({
+            duration: prefersReducedMotion ? 0 : 800,
+            once: true,
+            easing: 'ease-out-quad',
+            disable: prefersReducedMotion
+        });
+
+        // Mobile menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            document.body.classList.toggle('overflow-hidden');
+        }
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // Spotlight
+        const spotlight = document.getElementById('spotlight');
+        window.addEventListener('mousemove', (e) => {
+            spotlight.style.left = `${e.clientX}px`;
+            spotlight.style.top = `${e.clientY}px`;
+        });
+
+        // Scroll progress + back to top
+        const scrollProgress = document.getElementById('scroll-progress');
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            scrollProgress.style.width = (scrollTop / docHeight * 100) + '%';
+            if (scrollTop > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Animated counters
+        function animateValue(el, from, to, decimals, duration) {
+            const start = performance.now();
+            function tick(now) {
+                const p = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                const val = from + (to - from) * eased;
+                el.textContent = decimals > 0
+                    ? val.toFixed(decimals).replace('.', ',')
+                    : Math.floor(val).toString();
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
+        const statsEl = document.getElementById('stats-counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateValue(document.getElementById('counter-views'),   0, 3.5, 1, 2000);
+                animateValue(document.getElementById('counter-clicks'),  0, 30,  0, 2000);
+                animateValue(document.getElementById('counter-actions'), 0, 5.7, 1, 2000);
+                counterObserver.disconnect();
+            }
+        }, { threshold: 0.4 });
+        counterObserver.observe(statsEl);
+
+        // Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const caseCards = document.querySelectorAll('.case-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                caseCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.classList.remove('hidden-card');
+                    } else {
+                        card.classList.add('hidden-card');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
